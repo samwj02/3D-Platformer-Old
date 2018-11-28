@@ -45,7 +45,9 @@ public class PlayerController : MonoBehaviour {
         */
 
 
-        moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
+        //moveDirection = new Vector3(Input.GetAxis("Horizontal") * moveSpeed, moveDirection.y, Input.GetAxis("Vertical") * moveSpeed);
+
+        moveDirection = (transform.forward * Input.GetAxis("Vertical") * moveSpeed) + (transform.right * Input.GetAxis("Horizontal") * moveSpeed);
 
         if (controller.isGrounded)
         {
@@ -58,5 +60,7 @@ public class PlayerController : MonoBehaviour {
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
         controller.Move(moveDirection * Time.deltaTime);
+
+        //https://youtu.be/bJ6pbT3RzLA?t=812
     }
 }
