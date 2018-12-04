@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce = 2.0f;
     //public bool isGrounded;
     public CharacterController controller;
-    //https://youtu.be/IeuqDVKfJag?list=PLiyfvmtjWC_V_H-VMGGAZi7n5E0gyhc37&t=543
     //Rigidbody rb;
     public float gravityScale;
 
